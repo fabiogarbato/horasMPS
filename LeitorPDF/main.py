@@ -45,18 +45,25 @@ for dia in range(1, total_dias_mes + 1):
         continue
     
     altura_ajustada = altura_atual - (dia - 1 - nao_uteis_contados) * altura_por_linha - nao_uteis_contados * espaco_extra_sabado_domingo_feriado
+    # ENTRADA
+    inicio_entrada = datetime(100, 1, 1, params.hora_entrada_inicio, params.minuto_entrada_inicio)
+    fim_entrada = datetime(100, 1, 1, params.hora_entrada_fim, params.minuto_entrada_fim)
+    diferenca_total_minutos = int((fim_entrada - inicio_entrada).total_seconds() / 60)
+    minutos_aleatorios_entrada = random.randint(0, diferenca_total_minutos)
     
-    inicio = datetime(100, 1, 1, params.hora_entrada_inicio, params.minuto_entrada_inicio)
-    fim = datetime(100, 1, 1, params.hora_entrada_fim, params.minuto_entrada_fim)
-    diferenca_total_minutos = int((fim - inicio).total_seconds() / 60)
-    minutos_aleatorios = random.randint(0, diferenca_total_minutos)
-
-    horario_entrada_sorteado = inicio + timedelta(minutes=minutos_aleatorios)
+    horario_entrada_sorteado = inicio_entrada + timedelta(minutes=minutos_aleatorios_entrada)
     horario_entrada_str = horario_entrada_sorteado.strftime("%H:%M")
     c.drawString(params.eixo_x_entrada, altura_ajustada, horario_entrada_str)
 
-    horario_saida = (horario_entrada_sorteado + timedelta(hours=10)).strftime("%H:%M")
-    c.drawString(params.eixo_x_saida, altura_ajustada, horario_saida)
+    #SAIDA
+    inicio_saida = datetime(100, 1, 1, params.hora_saida_inicio, params.minuto_saida_inicio)
+    fim_saida = datetime(100, 1, 1, params.hora_saida_fim, params.minuto_saida_fim)
+    diferenca_total_minutos_saida = int((fim_saida - inicio_saida).total_seconds() / 60)
+    minutos_aleatorios_saida = random.randint(0, diferenca_total_minutos_saida)
+
+    horario_saida_sorteado = inicio_saida + timedelta(minutes=minutos_aleatorios_saida)
+    horario_saida_str = horario_saida_sorteado.strftime("%H:%M")
+    c.drawString(params.eixo_x_saida, altura_ajustada, horario_saida_str)
 
 c.save()
 

@@ -15,9 +15,16 @@ if esta_de_ferias.lower() == 's':
 
 eixo_x_entrada = config.getint('configuracoes', 'eixo_x_entrada')
 eixo_x_saida = config.getint('configuracoes', 'eixo_x_saida')
+#ENTRADA
 hora_entrada_inicio = config.getint('configuracoes', 'hora_entrada_inicio')
 minuto_entrada_inicio = config.getint('configuracoes', 'minuto_entrada_inicio')
 hora_entrada_fim = config.getint('configuracoes', 'hora_entrada_fim')
 minuto_entrada_fim = config.getint('configuracoes', 'minuto_entrada_fim')
+#SAIDA
+hora_saida_inicio = config.getint('configuracoes', 'hora_saida_inicio')
+minuto_saida_inicio = config.getint('configuracoes', 'minuto_saida_inicio')
+hora_saida_fim = config.getint('configuracoes', 'hora_saida_fim')
+minuto_saida_fim = config.getint('configuracoes', 'minuto_saida_fim')
+#
 caminho_pdf_original = config.get('configuracoes', 'caminho_pdf_original')
 caminho_pdf_modificado = config.get('configuracoes', 'caminho_pdf_modificado')
