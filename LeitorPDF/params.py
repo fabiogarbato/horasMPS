@@ -28,3 +28,8 @@ minuto_saida_fim = config.getint('configuracoes', 'minuto_saida_fim')
 #
 caminho_pdf_original = config.get('configuracoes', 'caminho_pdf_original')
 caminho_pdf_modificado = config.get('configuracoes', 'caminho_pdf_modificado')
+#ASSINATURA
+caminho_imagem_assinatura = config.get('configuracoes', 'caminho_imagem_assinatura')
+posicao_x_assinatura = config.getint('configuracoes', 'posicao_x_assinatura')
+largura_assinatura = config.getint('configuracoes', 'largura_assinatura')
+altura_assinatura = config.getint('configuracoes', 'altura_assinatura')
